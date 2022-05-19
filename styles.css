@@ -1,0 +1,80 @@
+/* CSS para la página principal */
+/* Boton de iniciar */
+#iniciar{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    padding-left: 82px;
+    gap: 8px;
+
+    position: absolute;
+    width: 317px;
+    height: 114px;
+    left: 561px;
+    top: 323px;
+
+    background: #0A3871;
+    border-radius: 24px;
+
+    /* Estilo de letra del boton */
+    width: 269px;
+    height: 66px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+
+}
+
+/* Boton de agregar*/
+#agregar{
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 17px 0px 38px 34px;
+    gap: 8px;
+
+    position: absolute;
+    width: 280px;
+    height: 67px;
+    left: 579px;
+    top: 427px;
+
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+
+    /* Estilo de letra del boton */
+    width: 232px;
+    height: 19px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+
+    color: #0A3871;
+
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+/* Fin del CSS de la página principal */
+
+/*Inicio del CSS de la página index-jugar*/
