@@ -78,3 +78,23 @@
 /* Fin del CSS de la página principal */
 
 /*Inicio del CSS de la página index-jugar*/
+#palabra-a-adivinar span{
+    vertical-align: bottom;
+    font-size: 2em;
+    border-bottom:2px solid black;
+    width: 30px;
+    text-align: center;
+    margin-right: 6px;
+    display: inline-block;
+}
+
+#teclado{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+#teclado button{
+    height: 30px;
+}
