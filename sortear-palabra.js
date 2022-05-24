@@ -19,15 +19,25 @@ var letraRepetida = 0;
 
 //Funcion que da una palabra al azar
 function crearPalabraSecreta() {
-
     numeroRandom = Math.floor(Math.random() * (listaPalabras.length));
     palabra = listaPalabras[numeroRandom];
     console.log(palabra);
+    crearGuiones();
+}
+
+//Funcion que crea los guiones dependiendo de la longitud de la palabra
+function crearGuiones() {
+    x.innerHTML = "";
     for (var i = 0; i < palabra.length; i++) {
         t = document.createTextNode("___  ");
         x.appendChild(t);
         document.body.appendChild(x);
     }
+}
+
+//funcion que dibuja la letra si es correcta
+function dibujarLetraCorrecta() {
+
 }
 
 
@@ -73,28 +83,28 @@ function capturarLetras(event) {
 // }
 
 function compararLetras() {
-    coincidencia = palabra.match(letra);
-    if (coincidencia == null) {
-        if(repetida.includes(letra) == false){
-            oportunidad--;
-            console.log("No acertaste")
+    if (palabra.includes(letra) == true) {
+        for (var i = 0; i < palabra.length; i++) {
+            if (palabra.includes(letra) == true) {
+                if (palabra[i + 0] == letra && repetida.includes(letra) == false) {
+                    aciertos++;
+                }
+            }
         }
-        
-    }else{
-        if(repetida.includes(letra) == false){
-            aciertos++;
-            console.log(aciertos);
-        }
-    }
-    if(oportunidad == 0){
-        alert("Perdiste");
-    }
-    if(aciertos == palabra.length){
-        alert("Ganaste");
+    }else if (palabra.includes(letra) == false && repetida.includes(letra) == false) {
+        oportunidad--;
+        console.log("Oportunidad es " + oportunidad);
     }
     repetida.push(letra);
+    if (aciertos == palabra.length) {
+        alert("Ganaste!!");
+        window.location.reload();
+    }
+    if (oportunidad == 0) {
+        alert("Perdiste!!");
+        window.location.reload();
+    }
 }
-
 
 //Funcion que escribe la letra cada vez que aciertas una letra
 
