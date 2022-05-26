@@ -98,3 +98,8 @@
 #teclado button{
     height: 30px;
 }
+
+#layout{
+    position: absolute;
+    top: 465px;
+}
