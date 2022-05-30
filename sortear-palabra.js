@@ -1,9 +1,8 @@
 var listaPalabras = ["RATON", "FUENTE", "RELOJ", "CIRUELA", "POPOCATEPETL", "PROCESADOR", "CORONAVIRUS"
 , "PANDEMIA", "VACUNAS", "COMPUTADORA", "GABINETE", "MICROFONO", "COVID"];
 
-var btn = document.getElementById("obtener-palabra").addEventListener("click", crearPalabraSecreta);
-
-
+var btn = document.getElementById("obtener-palabra");
+btn.addEventListener("click", crearPalabraSecreta);
 
 var numeroRandom;
 var palabra;
@@ -24,6 +23,7 @@ function crearPalabraSecreta() {
     palabra = listaPalabras[numeroRandom];
     console.log(palabra);
     crearGuiones();
+    btn.disabled = true;
     
 }
 
@@ -37,7 +37,6 @@ function crearGuiones() {
         
     }
     dibujarAhorcado();
-    
 }
 
 const letras_teclado = document.querySelectorAll("#teclado button");
@@ -94,10 +93,10 @@ function perdiste(){
     window.location.reload();
 }
 
-
 const img = document.getElementById("ahorcado-imagen");
 let ahorcado = document.createElement("IMG");
 
+//Función que dibuja el ahorcado
 function dibujarAhorcado(){
     switch ( oportunidad ){
         case 6: ahorcado.setAttribute("src", "imagenes/ahorcado(1).png");
@@ -123,7 +122,5 @@ function dibujarAhorcado(){
         
     }
  }
-
-    
 
 
