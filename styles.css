@@ -163,3 +163,16 @@ flex: none;
 order: 1;
 flex-grow: 1;
 }
+
+/* CSS para ocultar elementos del HTML */
+#agregar-nueva-palabra{
+    display: none;
+}
+
+#jugar-ahorcado{
+    display: none;
+}
+
+#pantalla-principal{
+    display: block;
+}

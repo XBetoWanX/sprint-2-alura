@@ -4,6 +4,12 @@ var listaPalabras = ["RATON", "FUENTE", "RELOJ", "CIRUELA", "POPOCATEPETL", "PRO
 var btn = document.getElementById("obtener-palabra");
 btn.addEventListener("click", crearPalabraSecreta);
 
+var desistir = document.getElementById("desistir");
+desistir.addEventListener("click", resetearLetras);
+
+var iniciarJuego = document.getElementById("iniciar");
+iniciarJuego.addEventListener("click", deshabilitarLetras);
+
 var numeroRandom;
 var palabra;
 array1 = new Array();
@@ -14,6 +20,8 @@ var aciertos;
 var oportunidad;
 var letraRepetida = 0;
 var desactivarLetra;
+var habilitarTeclas = document.querySelectorAll("#teclado button");
+var palabraAdivinar = document.getElementById("palabra-a-adivinar");
 
 //Funcion que da una palabra al azar
 function crearPalabraSecreta() {
@@ -22,14 +30,19 @@ function crearPalabraSecreta() {
     numeroRandom = Math.floor(Math.random() * (listaPalabras.length));
     palabra = listaPalabras[numeroRandom];
     console.log(palabra);
+    // resetearLetras();
+    for(let i = 0; i < 27; i++){
+        habilitarTeclas[i].disabled = false;
+            
+    }
+    repetida = new Array();
     crearGuiones();
-    btn.disabled = true;
+    
     
 }
 
 //Funcion que crea los guiones dependiendo de la longitud de la palabra
 function crearGuiones() {
-    const palabraAdivinar = document.getElementById("palabra-a-adivinar");
     palabraAdivinar.innerHTML = "";
     for (var i = 0; i < palabra.length; i++) {
         const span = document.createElement("span");
@@ -84,13 +97,17 @@ function compararLetras() {
 
 //Funcion que te dice si ganaste
 function ganaste(){
-    alert("GANASTE!!")
-    window.location.reload();
+    alert("GANASTE!!");
+    // window.location.reload();
+    resetearLetras();
+    deshabilitarLetras();
 }
 
 function perdiste(){
     alert("Perdiste!!, la palabra era: " + palabra);
-    window.location.reload();
+    // window.location.reload();
+    resetearLetras();
+    deshabilitarLetras();
 }
 
 const img = document.getElementById("ahorcado-imagen");
@@ -123,4 +140,36 @@ function dibujarAhorcado(){
     }
  }
 
+ //Funcion para ocultar elementos del HTML
+ function mostrarJuego(){
+     document.getElementById('jugar-ahorcado').style.display = 'block';
+     document.getElementById('agregar-nueva-palabra').style.display = 'none';
+     document.getElementById('pantalla-principal').style.display = 'none';
+     
+ }
+ //Funcion para ocultar elementos del HTML
+ function mostrarMenuPrincipal(){
+    document.getElementById('pantalla-principal').style.display = 'block';
+    document.getElementById('jugar-ahorcado').style.display = 'none';
+    document.getElementById('agregar-nueva-palabra').style.display = 'none';
+ }
 
+ //Funcion que activa las teclas deshabilitadas
+ function resetearLetras(){
+    
+    for(let i = 0; i < 27; i++){
+        habilitarTeclas[i].disabled = false;
+            
+    }
+    aciertos = 0;
+    oportunidad = 6;
+    repetida = new Array();
+    palabraAdivinar.innerHTML = "";
+}
+
+function deshabilitarLetras(){
+    for(let i = 0; i < 27; i++){
+        habilitarTeclas[i].disabled = true;
+            
+    }
+}
