@@ -5,7 +5,7 @@ var btn = document.getElementById("obtener-palabra");
 btn.addEventListener("click", crearPalabraSecreta);
 
 var desistir = document.getElementById("desistir");
-desistir.addEventListener("click", resetearLetras);
+desistir.addEventListener("click", salir);
 
 var iniciarJuego = document.getElementById("iniciar");
 iniciarJuego.addEventListener("click", deshabilitarLetras);
@@ -37,8 +37,6 @@ function crearPalabraSecreta() {
     }
     repetida = new Array();
     crearGuiones();
-    
-    
 }
 
 //Funcion que crea los guiones dependiendo de la longitud de la palabra
@@ -55,7 +53,6 @@ function crearGuiones() {
 const letras_teclado = document.querySelectorAll("#teclado button");
 for (var i = 0; i < letras_teclado.length; i++) {
     letras_teclado[i].addEventListener("click", capturarLetras);
-
 }
 
 //Funcion que captura las letras ingresadas por el usuario
@@ -116,25 +113,25 @@ let ahorcado = document.createElement("IMG");
 //Función que dibuja el ahorcado
 function dibujarAhorcado(){
     switch ( oportunidad ){
-        case 6: ahorcado.setAttribute("src", "imagenes/ahorcado(1).png");
+        case 6: ahorcado.setAttribute("src", "imagenes2/ahorcado1.png");
         img.appendChild(ahorcado);
         break;
-        case 5: ahorcado.setAttribute("src", "imagenes/ahorcado(2).png");
+        case 5: ahorcado.setAttribute("src", "imagenes2/ahorcado2.png");
         img.appendChild(ahorcado);
         break;
-        case 4: ahorcado.setAttribute("src", "imagenes/ahorcado(3).png");
+        case 4: ahorcado.setAttribute("src", "imagenes2/ahorcado3.png");
         img.appendChild(ahorcado);
         break;
-        case 3: ahorcado.setAttribute("src", "imagenes/ahorcado(4).png");
+        case 3: ahorcado.setAttribute("src", "imagenes2/ahorcado4.png");
         img.appendChild(ahorcado);
         break;
-        case 2: ahorcado.setAttribute("src", "imagenes/ahorcado(5).png");
+        case 2: ahorcado.setAttribute("src", "imagenes2/ahorcado5.png");
         img.appendChild(ahorcado);
         break;
-        case 1: ahorcado.setAttribute("src", "imagenes/ahorcado(6).png");
+        case 1: ahorcado.setAttribute("src", "imagenes2/ahorcado6.png");
         img.appendChild(ahorcado);
         break;
-        case 0: ahorcado.setAttribute("src", "imagenes/ahorcado(7).png");
+        case 0: ahorcado.setAttribute("src", "imagenes2/ahorcado7.png");
         img.appendChild(ahorcado);
         
     }
@@ -172,4 +169,10 @@ function deshabilitarLetras(){
         habilitarTeclas[i].disabled = true;
             
     }
+}
+
+//Funcion para que al presionar el boton desistir se borre el ahorcado
+function salir(){
+    crearPalabraSecreta();
+    palabraAdivinar.innerHTML = "";
 }

@@ -1,6 +1,18 @@
 /* CSS para la página principal */
 /* Boton de iniciar */
-#iniciar{
+body {
+    background-image: url("imagenes/arbol-del-ahorcado.jpg");
+    background-repeat: repeat-x;
+    max-height: 100vh;
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+#iniciar {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -38,7 +50,7 @@
 }
 
 /* Boton de agregar*/
-#agregar{
+#agregar {
     box-sizing: border-box;
 
     display: flex;
@@ -78,101 +90,184 @@
 /* Fin del CSS de la página principal */
 
 /*Inicio del CSS de la página index-jugar*/
-#palabra-a-adivinar span{
+#palabra-a-adivinar span {
     vertical-align: bottom;
     font-size: 2em;
-    border-bottom:2px solid black;
+    border-bottom: 2px solid white;
     width: 30px;
     text-align: center;
     margin-right: 6px;
     display: inline-block;
+    color: #FFFFFF;
 }
 
-#teclado{
+#teclado {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
     column-gap: 10px;
     row-gap: 10px;
+    color: aqua;
 }
 
-#teclado button{
+#teclado button {
     height: 30px;
 }
 
-#layout{
+#layout {
     position: absolute;
     top: 465px;
 }
 
 /* Inicio del CSS de la página index-agregar */
-#guardar{
-    /* Button */
+#guardar {
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 107px;
+    padding-top: 25px;
+    gap: 8px;
+
+    width: 332px;
+    height: 67px;
 
 
-/* Auto layout */
+    background: #0A3871;
+    border-radius: 24px;
 
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding-left: 107px;
-padding-top: 25px;
-gap: 8px;
 
-width: 332px;
-height: 67px;
-
-/* Dark blue/dark-blue-300 */
-
-background: #0A3871;
-border-radius: 24px;
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 1;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+    margin: 400px 533px 50px;
 
 }
 
-#cancelar{
-    /* Button */
+#cancelar {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 132px;
+    padding-top: 25px;
+    gap: 8px;
+
+    width: 332px;
+    height: 67px;
+
+    border: 1px solid #0A3871;
+    border-radius: 24px;
 
 
-box-sizing: border-box;
-
-/* Auto layout */
-
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding-left: 132px;
-padding-top: 25px;
-gap: 8px;
-
-width: 332px;
-height: 67px;
-
-/* Dark blue/dark-blue-300 */
-
-border: 1px solid #0A3871;
-border-radius: 24px;
-
-/* Inside auto layout */
-
-flex: none;
-order: 1;
-flex-grow: 1;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+    margin: 0px 532px
 }
 
 /* CSS para ocultar elementos del HTML */
-#agregar-nueva-palabra{
+#agregar-nueva-palabra {
+    display: none;
+
+}
+
+#jugar-ahorcado {
     display: none;
 }
 
-#jugar-ahorcado{
-    display: none;
-}
-
-#pantalla-principal{
+#pantalla-principal {
     display: block;
+}
+
+#nueva-palabra {
+    /* Ingrese una palabra */
+
+
+    position: absolute;
+    width: 299px;
+    height: 48px;
+    left: 559px;
+    top: 256px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+
+
+    color: black;
+    border: none;
+    background-color: transparent;
+
+}
+
+#demo {
+    color: #FFFFFF;
+}
+
+main {
+    margin-top: 30px;
+}
+
+#layout {
+    display: inline-block;
+    position: absolute;
+    top: 400px;
+    right: 300px;
+
+
+}
+
+#obtener-palabra {
+    position:static;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 23px 115px 0px;
+    gap: 8px;
+    margin: -110px 0px 30px;
+    color: #FFFFFF;
+    width: 332px;
+    height: 67px;
+
+
+    background: #0A3871;
+    border-radius: 24px;
+
+  
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+#desistir {
+    display: flex;
+    position:static;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 26px 134px 0px;
+
+    top: 100px;
+    gap: 8px;
+    margin: 0px 0px -36px;
+
+    width: 332px;
+    height: 67px;
+
+
+    background: #FFFFFF;
+    border-radius: 24px;
+
+  
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+::placeholder{
+    color: black;
 }
