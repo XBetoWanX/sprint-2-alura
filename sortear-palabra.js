@@ -61,7 +61,6 @@ function capturarLetras(event) {
     letra = event.target.textContent;
     if(palabra.length != 0){
         desactivarLetra.disabled = true;
-        
     }
     compararLetras();
 }
@@ -75,7 +74,6 @@ function compararLetras() {
                 if (palabra[i + 0] == letra && repetida.includes(letra) == false) {
                     aciertos++;
                     spans[i].innerHTML = letra;
-                    desactivarLetra.style.background = 'green';
                 }
             }
         }
@@ -83,7 +81,6 @@ function compararLetras() {
         oportunidad--;
         dibujarAhorcado();
         console.log("Oportunidad es " + oportunidad);
-        desactivarLetra.style.background = 'red';
     }
     repetida.push(letra);
     if (aciertos == palabra.length) {
@@ -159,7 +156,7 @@ function dibujarAhorcado(){
     
     for(let i = 0; i < 27; i++){
         habilitarTeclas[i].disabled = false;
-        habilitarTeclas[i].style.background = 'white';            
+            
     }
     aciertos = 0;
     oportunidad = 6;
