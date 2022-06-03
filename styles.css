@@ -286,3 +286,28 @@ main {
 #ahorcado-imagen > img{
     width: 45%;
 }
+
+#iniciar:hover{
+    background: #3B83BD;
+}
+
+#agregar:hover{
+    background: wheat;
+}
+
+#guardar:hover{
+    background: #3B83BD;
+}
+
+#cancelar:hover{
+    background: wheat;
+
+}
+
+#obtener-palabra:hover{
+    background: #3B83BD;
+}
+
+#desistir:hover{
+    background: wheat;
+}
