@@ -38,6 +38,8 @@ function crearPalabraSecreta() {
     }
     repetida = new Array();
     crearGuiones();
+    document.querySelector(".ganaste").style.visibility = 'hidden';
+    document.querySelector(".perdiste").style.visibility = 'hidden';
 }
 
 //Funcion que crea los guiones dependiendo de la longitud de la palabra
@@ -87,25 +89,24 @@ function compararLetras() {
     }
     repetida.push(letra);
     if (aciertos == palabra.length) {
-        setTimeout(ganaste, 500);
+        ganaste();
+        document.querySelector(".ganaste").style.visibility = 'visible';
 
     }
     if (oportunidad == 0) {
-        setTimeout(perdiste, 500);
+        perdiste();
+        document.querySelector(".perdiste").style.visibility = 'visible';
     }
 }
 
 //Funcion que te dice si ganaste
 function ganaste(){
-    alert("GANASTE!!");
-    // window.location.reload();
     resetearLetras();
     deshabilitarLetras();
 }
 
 function perdiste(){
-    alert("Perdiste!!, la palabra era: " + palabra);
-    // window.location.reload();
+    alert("La palabra era: " + palabra);
     resetearLetras();
     deshabilitarLetras();
 }

@@ -228,7 +228,7 @@ main {
     align-items: flex-start;
     padding: 23px 115px 0px;
     gap: 8px;
-    margin: -161px 0px 30px;
+    margin: -229px 0px 30px;
     color: #FFFFFF;
     width: 332px;
     height: 67px;
@@ -288,7 +288,7 @@ main {
 }
 
 #ahorcado-imagen > img{
-    width: 45%;
+    width: 33%;
 }
 
 #iniciar:hover{
@@ -329,3 +329,21 @@ main {
     width: 65px;
 }
 
+.perdiste{
+    visibility: hidden;
+    color: red;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 50px;
+}
+
+.ganaste{
+    
+    color: green;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 50px;
+    margin-top: -108px;
+    visibility: hidden;
+    
+}
