@@ -283,6 +283,10 @@ main {
     bottom: 0;
 }
 
+#rodapie > a{
+    display: block;
+}
+
 #ahorcado-imagen > img{
     width: 45%;
 }
@@ -311,3 +315,17 @@ main {
 #desistir:hover{
     background: wheat;
 }
+
+#parrafo-rodapie{
+    margin: -15px auto auto auto;
+}
+
+#github{
+    margin-bottom: -23px;
+}
+
+#github:hover{
+    height: 65px;
+    width: 65px;
+}
+
