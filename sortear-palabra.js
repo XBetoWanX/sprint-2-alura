@@ -101,7 +101,7 @@ function compararLetras() {
 
 //Funcion que te dice si ganaste
 function ganaste(){
-    resetearLetras();
+    setTimeout(resetearLetras, 1000);
     deshabilitarLetras();
 }
 
